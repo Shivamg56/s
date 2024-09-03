@@ -7,7 +7,7 @@ x=st.selectbox('Do you want Loan:',options=['N/A','Yes','NO'])
 if x=='Yes':
     Amount=selectbox('How Much Amount Do you want? :',options=['0','1000','5000','10000','50000','100000','500000','1000000','1500000','2000000'])
     Time_Period=selectbox('Time Period(in years) :',options=['0','1','2','3','4','5','6','7','8','9','10'])
-    Interest_Rate=selectbox('Annual Interest Rate(in %) :',options=['0','5','8','11','13','15','19'])
+    Interest_Rate=selectbox('Annual Interest Rate(in %) :',options=['5','8','11','13','15','19'])
     Interest=0
     Total_Amount=0
     A=int(Amount)
