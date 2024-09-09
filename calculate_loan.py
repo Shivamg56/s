@@ -1,23 +1,30 @@
 import streamlit as st
-from altair import selection, sequence
-from select import select
 from streamlit import selectbox
 
-st.title('Loan Calculater1 App')
+st.title('Loan Calculater')
 st.write('Welcome Guest :')
-x=st.selectbox('Do you want Loan:',options=['Yes','NO'])
+x=st.selectbox('Do you want Loan:',options=['N/A','Yes','NO'])
 if x=='Yes':
-    Amount=st.number_input('How Much Amount Do you want? :')
-    Time_Period=st.number_input('Time period(Years) :')
-    Interest_Rate=st.number_input('Annual Interest Rate :')
+    Amount=selectbox('How Much Amount Do you want? :',options=['0','1000','5000','10000','50000','100000','500000','1000000','1500000','2000000'])
+    Time_Period=selectbox('Time Period(in years) :',options=['0','1','2','3','4','5','6','7','8','9','10'])
+    Interest_Rate = int('12')
+
     Interest=0
     Total_Amount=0
+    A=int(Amount)
+    T=int(Time_Period)
+
     if Interest>=0:
-        Interest=(Amount*Time_Period*Interest_Rate)/100
+        Interest=(A*T*Interest_Rate)/100
+        st.write('Annual Interest Rate : 12%')
         st.write('Total Interest To Be Paid In Selected Time Period Is:',Interest)
+
     if Total_Amount>=0:
-        Total_Amount=Amount+Interest
+        Total_Amount=A+Interest
         st.write('Total Amount To Be Paid In Selected Time Period Is:',Total_Amount)
+    if Interest>0:
         st.write('Thank you for using Loan Calculater App')
+elif x=='N/A':
+    st.write('')
 else:
     st.write('Thank You for Your Visit.')
