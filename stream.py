@@ -18,6 +18,7 @@ def create_playlist():
     # ...
 
 # Main app
+
 def main():
     st.title("My Video Streaming App")
 
